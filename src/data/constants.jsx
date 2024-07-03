@@ -13,7 +13,7 @@ export const headerData = {
 export const aboutData = {
     aboutText: 'I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning, I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.',
     title: 'Hi, I am Nishant Nirala',
-    profile: 'I am a Software Developer.',
+    profile: 'I am a Software Engineer.',
     buttonText: 'Check Resume',
     resumeLink: "https://drive.google.com/file/d/1SVW4LaNV0zItLq5flv0_yuNqhg5XDIxM/view?usp=sharing",
     buttonClasses: 'text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2',

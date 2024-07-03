@@ -7,7 +7,7 @@ function Contact() {
         <h1 className='text-center text-[35px] font-bold'>Contact</h1>
         <p className='text-center text-[20px]'>Feel free to reach out to me for any questions or opportunities!</p>
 
-        <div className='flex justify-center mt-9'>
+        <div className='flex justify-center mt-9 p-10'>
           <div className='w-[600px] border-2 border-blue-950 rounded-xl shadow-xl shadow-slate-900 p-5'>
             <form className="">
               <div className="text-[30px] font-bold text-center p-2 mb-2">Email Me 🚀</div>
