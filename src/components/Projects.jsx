@@ -12,7 +12,7 @@ function Projects() {
         {projects.map((project, index) => (
           <div key={index} className='max-w-sm rounded-xl shadow-lg dark:bg-gray-900 p-3 transition-transform transform hover:scale-105 hover:shadow-2xl'>
             <a href="#">
-              <img className='rounded-t-xl' src={project.image} alt={project.title} />
+              <img className='rounded-t-xl h-[200px]' src={project.image} alt={project.title} />
             </a>
             <div className='p-5'>
               <a href="#">

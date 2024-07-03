@@ -12,7 +12,7 @@ function Experience() {
       <div className="flex justify-center mt-12 space-x-10">
         {experiences.map((exp, index) => (
           <div key={index} className="w-full md:w-1/2 lg:w-1/3 p-5">
-            <div className={`h-[400px] flex flex-col items-start justify-start p-8 text-center ${index === 0 ? 'bg-white dark:bg-gray-900 rounded-xl shadow-xl shadow-slate-900 border-2 border-blue-950 mb-10' : 'ml-[-40px] mb-10'}`}>
+            <div className={` h-auto flex flex-col items-start justify-start p-8 text-center ${index === 0 ? 'bg-white dark:bg-gray-900 rounded-xl shadow-xl shadow-slate-900 border-2 border-blue-950 mb-10' : 'ml-[-40px] mb-10'}`}>
               <figcaption className="flex items-center justify-center">
                 <img className={`rounded-lg ${index === 0 ? 'h-9' : 'bg-black rounded-full h-11 w-11 border-4 border-white'}`} src={index === 0 ? exp.companyLogo : t2bicon} alt="company logo" />
                 <div className="space-y-1 font-medium dark:text-white text-left rtl:text-right ml-3">

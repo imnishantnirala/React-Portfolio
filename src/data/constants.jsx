@@ -109,25 +109,46 @@ export const skillsData = [
 
 export const projects = [
     {
-      title: 'DecisionHub',
-      image: 'https://raw.githubusercontent.com/rishavchanda/DecisionHub/master/assets/testRule.jpg',
-      date: 'Jan 2024 - Dec 2023',
-      description: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
+      title: 'Toyota Fleet Managment',
+      image: 'https://proconmrm.com.au/wp-content/uploads/2019/06/Frame-12_3x-2.png',
+      date: 'Jan 2021 - April 2024 - Associated with Thoughts2Binary',
+      description: 'It is a fleet management project. Subscribers are able to locate, track, manage, recover and send commands to their assets in real-time, via a secure internet portal.',
       tags: ['Laravel', 'PHP', 'JavaScript', 'Jquery']
     },
     {
-      title: 'Project B',
-      image: 'https://raw.githubusercontent.com/rishavchanda/DecisionHub/master/assets/testRule.jpg',
-      date: 'Feb 2022 - Nov 2022',
-      description: 'This project focuses on providing solutions for enterprise-level technology needs.',
-      tags: ['React', 'Node.js', 'Express', 'MongoDB']
+      title: 'PreStart APIs',
+      image: 'https://proconmrm.com.au/wp-content/uploads/2019/06/driver_app_images.png',
+      date: 'Feb 2021 - April 2024 - Associated with Thoughts2Binary',
+      description: 'This project focuses on providing solutions for prepare and allocate custom checklists to vehicles to receive up-to-date feedback from drivers regarding vehicle road-worthiness. ',
+      tags: ['Laravel', 'MySQL', 'PHP']
     },
     {
-      title: 'Project C',
-      image: 'https://raw.githubusercontent.com/rishavchanda/DecisionHub/master/assets/testRule.jpg',
-      date: 'Mar 2023 - Aug 2023',
-      description: 'An innovative approach to tackling modern web development challenges.',
-      tags: ['Angular', 'TypeScript', 'CSS', 'HTML']
+      title: 'Disney+ Clone',
+      image: 'https://media.licdn.com/dms/image/D562DAQG5x1A7B_D3eA/profile-treasury-image-shrink_800_800/0/1718346097314?e=1720616400&v=beta&t=tQsshRJDweR89p3ssdbeSSA-e7qatIItlMmUlLOrxys',
+      date: 'Jun 2024 - Jun 2024 - Personal Project',
+      description: 'This project showcases a simple implementation of a Disney+ like movie streaming application.',
+      tags: ['ReactJs', 'CSS', 'HTML']
+    },
+    {
+      title: 'Article Management Web App',
+      image: 'https://media.licdn.com/dms/image/D562DAQEI9Jjc3k-tMw/profile-treasury-image-shrink_800_800/0/1720011134392?e=1720616400&v=beta&t=ZjlSoglarUju8acWqP5u2L25BB39kyZypv-3vs3TL3c',
+      date: 'Mar 2021 - May 2021 - Personal Project',
+      description: 'I created an article blog management web app with a fully custom admin panel dashboard using PHP, CodeIgniter, jQuery, JavaScript, and CSS. This app allows for easy creation, editing, and management of blog posts, offering a user-friendly interface and robust features for administrators.',
+      tags: ['PHP', 'CodeIgniter', 'SQL', 'JavaScript', 'JQuery', 'CSS']
+    },
+    {
+      title: 'One Page Portfolio Web App',
+      image: 'https://media.licdn.com/dms/image/D562DAQFqoC_q0_AlHQ/profile-treasury-image-shrink_800_800/0/1720011730060?e=1720620000&v=beta&t=Tn4WPcanEMsX6APwysOr8WgUFeOCruVw-c7JILNRNwo',
+      date: 'Jun 2024 - Jun 2024 - Personal Project',
+      description: 'I created a sleek and modern One Page Portfolio Web App using React.js. This app showcases my skills, projects, and contact information in a seamless, responsive design. The use of React.js ensures fast loading times and a smooth user experience, highlighting my proficiency in front-end development.',
+      tags: ['ReactJs', 'CSS', 'HTML']
+    },
+    {
+      title: 'ECommerce REST API',
+      image: 'https://media.licdn.com/dms/image/D562DAQGzJ7BoDe7GzA/profile-treasury-image-shrink_800_800/0/1720012582715?e=1720620000&v=beta&t=Dok0N5KotkTaLWULtFQMDGV3vUYY4Ec8E0b4fcacRhM',
+      date: 'Jun 2024 - Jun 2024 - Personal Project',
+      description: 'I developed a Laravel-based eCommerce API that handles product listings, user authentication, shopping cart management, and order processing. This API provides endpoints for creating, reading, updating, and deleting (CRUD) operations on products and orders, ensuring a smooth integration with any front-end or mobile application.',
+      tags: ['Laravel', 'MySQL', 'PHP']
     }
 ];
 
@@ -156,7 +177,7 @@ export const experiences = [
     company: 'Thoughts2Binary',
     companyLogo: 'https://static.wixstatic.com/media/add3a0_450042e5a3ea42d4bcd27b3bc68de433~mv2.png/v1/fill/w_168,h_92,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/add3a0_450042e5a3ea42d4bcd27b3bc68de433~mv2.png',
     duration: 'Dec 2021 - April 2024',
-    description: 'Enhanced user experiences on Neurobit PSG & Hybrid, Portals by resolving bugs & reduced load time by 40%. Built Neurobit Analytics portal using React Js with seamless interaction of REST APIs using AXIOS optimized with React Query. Refactored previous code to TypeScript, updated with new dependency and integrated Vite with Jest for Unit Testing.',
-    skills: ['ReactJS', 'Redux', 'NodeJs', 'Material UI', 'HTML', 'CSS', 'JavaScript']
+    description: ' FRONT-END JavaScript | JQuery Responsible for managing User Interface. Identified and implemented dynamic web solutions in accordance with company standards and best practices. Developed new features to enhance user experience and worked in transition of the product. BACK-END PHP | Laravel Developed and maintained RESTful APls using the Laravel framework to support the companys web and mobile applications. Collaborated with front-end developers to ensure seamless integration of APIs and efficient data exchange. Mentored Juniors on team in expanding their skills.',
+    skills: ['PHP', 'Laravel API', 'JavaScript', 'jQuery', 'ReactJs', 'HTML', 'CSS', '(Git)']
   }
 ];
