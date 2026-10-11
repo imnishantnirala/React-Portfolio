@@ -6,11 +6,14 @@ function Experience() {
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="Experience">
       <div className="text-center mb-10 sm:mb-14">
+        <div className="inline-block px-3.5 py-1 mb-3 rounded-full bg-purple-950/60 border border-purple-800/40 text-purple-300 text-xs font-semibold tracking-wide uppercase">
+          Career Journey
+        </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-          Experience
+          Work Experience
         </h2>
         <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
-          My professional work journey building robust software solutions and real-world web applications.
+          Over 3.5+ years of engineering scalable web applications, enterprise REST APIs, and digital media solutions.
         </p>
       </div>
 
@@ -43,19 +46,28 @@ function Experience() {
 
               {exp.duration && (
                 <div className="self-start sm:self-center">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-purple-950/60 text-purple-300 border border-purple-800/40">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-purple-950/60 text-purple-300 border border-purple-800/40 whitespace-nowrap">
                     {exp.duration}
                   </span>
                 </div>
               )}
             </div>
 
-            {/* Description */}
-            {exp.description && (
+            {/* Bullet Points or Description */}
+            {exp.points && exp.points.length > 0 ? (
+              <ul className="mt-4 space-y-2.5 text-xs sm:text-sm md:text-base text-gray-300">
+                {exp.points.map((point, pIdx) => (
+                  <li key={pIdx} className="flex items-start gap-2.5">
+                    <span className="text-purple-400 mt-0.5 shrink-0 font-bold">▹</span>
+                    <span className="leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : exp.description ? (
               <p className="mt-4 text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed">
                 {exp.description}
               </p>
-            )}
+            ) : null}
 
             {/* Skills Badges */}
             {exp.skills && exp.skills.length > 0 && (

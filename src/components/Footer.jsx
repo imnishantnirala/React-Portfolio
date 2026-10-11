@@ -2,7 +2,7 @@ import React from 'react';
 import { headerData } from '../data/constants';
 
 function Footer() {
-  const { menuList, link } = headerData;
+  const { menuList, link, githubLink } = headerData;
   const currentYear = new Date().getFullYear();
 
   return (
@@ -42,12 +42,24 @@ function Footer() {
                 LinkedIn
               </a>
             </li>
+            {githubLink && (
+              <li>
+                <a
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-purple-400 transition-colors"
+                >
+                  GitHub
+                </a>
+              </li>
+            )}
           </ul>
         </div>
 
         <div className="mt-8 pt-6 border-t border-gray-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
           <p>© {currentYear} Nishant Nirala. All Rights Reserved.</p>
-          <p className="text-gray-600">Built with React &amp; Tailwind CSS</p>
+          <p className="text-gray-600">Full Stack Engineer &amp; Video Editor</p>
         </div>
       </div>
     </footer>
