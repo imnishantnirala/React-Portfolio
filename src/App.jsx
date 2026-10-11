@@ -13,15 +13,17 @@ function App() {
 
   return (
     <>
-    <div className=' bg-black'>
-      <Header/>
-      <About/>
-      <Skills/>
-      <Experience/>
-      <Projects/>
-      <Education/>
-      <Contact/>
-      <Footer/>
+    <div className='bg-black text-white min-h-screen overflow-x-hidden selection:bg-purple-600 selection:text-white'>
+      <Header />
+      <main>
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
     </div>
     </>
   )
