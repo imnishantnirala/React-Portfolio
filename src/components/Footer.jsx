@@ -25,7 +25,7 @@ function Footer() {
             {menuList.map((item, index) => (
               <li key={index}>
                 <a
-                  href={'#' + item}
+                  href={'#' + item.replace(/\s+/g, '')}
                   className="hover:text-purple-400 transition-colors"
                 >
                   {item}

@@ -16,7 +16,7 @@ export const headerData = {
     firstName: "Nishant",
     lastName: "Nirala"
   },
-  menuList: ['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'],
+  menuList: ['About', 'Skills', 'Experience', 'Projects', 'Video Editing', 'Education', 'Contact'],
   buttonText: "LinkedIn Profile",
   link: "https://www.linkedin.com/in/nishant-nirala",
   buttonClasses: "relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800",
@@ -24,9 +24,9 @@ export const headerData = {
 };
 
 export const aboutData = {
-  aboutText: 'I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning, I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.',
+  aboutText: 'Creative and results-driven Software Engineer and Freelance Video Editor with expertise in building scalable web applications and crafting high-retention video content for brands, creators, and businesses. Skilled in full-stack web development as well as DaVinci Resolve, Adobe Premiere Pro, and After Effects.',
   title: 'Hi, I am Nishant Nirala',
-  profile: 'I am a Software Engineer.',
+  profile: 'Software Engineer & Video Editor',
   buttonText: 'Check Resume',
   resumeLink: "https://drive.google.com/file/d/1AuhKm6Ci3R8bnSBkCvfzgnNoMM0qyJon/view?usp=sharing",
   buttonClasses: 'text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 focus:ring-4 focus:outline-none focus:ring-purple-800 font-medium rounded-xl text-sm sm:text-base px-6 py-3 text-center shadow-lg shadow-purple-600/30 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]',
@@ -86,6 +86,35 @@ export const skillsData = [
       {
         name: 'MySQL',
         image: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg',
+      },
+    ],
+  },
+  {
+    title: 'Video Editing & Motion Graphics',
+    skills: [
+      {
+        name: 'DaVinci Resolve',
+        image: 'https://cdn.simpleicons.org/davinciresolve',
+      },
+      {
+        name: 'Adobe Premiere Pro',
+        image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg',
+      },
+      {
+        name: 'After Effects',
+        image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg',
+      },
+      {
+        name: 'Audacity',
+        image: 'https://cdn.simpleicons.org/audacity',
+      },
+      {
+        name: 'Photoshop',
+        image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg',
+      },
+      {
+        name: 'Canva',
+        image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg',
       },
     ],
   },
@@ -186,6 +215,14 @@ export const educationData = [
 
 export const experiences = [
   {
+    role: 'Freelance Video Editor & Motion Designer',
+    company: 'Content Creators, Startups & Agencies (Remote)',
+    companyLogo: 'https://cdn-icons-png.flaticon.com/512/3845/3845868.png',
+    duration: '2023 - Present',
+    description: 'Craft high-retention documentary videos, YouTube content, viral reels, and creator vlogs for top channels (including @Bikebuddytales - YT, @The3rdiii - YT, and @gopal_choudharynsui - Insta). Mastered hook pacing, sound design, atmospheric color grading, seamless transitions, and dynamic subtitle animations that boost watch time and engagement.',
+    skills: ['DaVinci Resolve', 'Adobe Premiere Pro', 'After Effects', 'Audacity', 'Photoshop', 'Canva', 'Color Grading', 'Sound Design']
+  },
+  {
     role: 'Freelance Full Stack Developer',
     company: 'Studio 52 Media & Technology Group (Remote)',
     companyLogo: 'https://studio52.tv/curator/logo/studio52-logo.png?h=auto&w=auto&s=1024efc600fe0c46099c0a2b2ff32a72',
@@ -193,7 +230,6 @@ export const experiences = [
     description: 'Architect and deliver end-to-end full-stack web solutions using PHP, Laravel, JavaScript and React.js for client platforms. Lead module lifecycle from requirement gathering and UI implementation to production deployment with minimal supervision. Diagnose and resolve complex production bugs, optimize database queries, and ensure 99%+ platform availability and seamless checkout flows.',
     skills: ['PHP', 'Laravel', 'JavaScript', 'jQuery', 'Tailwind CSS', 'HTML', 'CSS']
   },
-
   {
     role: 'Software Engineer',
     company: 'Thoughts2Binary (Hybrid)',
@@ -203,3 +239,121 @@ export const experiences = [
     skills: ['PHP', 'Laravel API', 'JavaScript', 'jQuery', 'ReactJs', 'HTML', 'CSS', '(Git)']
   }
 ];
+
+export const videoEditingData = {
+  badge: "Creative Video Editor & Motion Designer",
+  title: "Video Editing & Post-Production",
+  subtitle: "Turning raw footage into cinematic, high-retention stories for YouTube creators, Instagram reels, documentaries, and brands.",
+  summary: "Creative and results-driven Freelance Video Editor with expertise in crafting engaging video content for brands, creators, and businesses. Skilled in DaVinci Resolve, After Effects, and Adobe Premiere Pro with strong knowledge of motion graphics, sound design, and storytelling. Experienced in working with diverse clients, delivering high-quality videos on time that enhance brand presence and audience engagement.",
+  stats: [
+    { label: "Content Formats", value: "Documentaries, Vlogs & Reels" },
+    { label: "Retention Focused", value: "Custom SFX & Kinetic Subtitles" },
+    { label: "Core Tools", value: "DaVinci, Premiere & After Effects" },
+    { label: "Availability", value: "Freelance & Remote" }
+  ],
+  highlights: [
+    {
+      title: "Audience Retention Mastery",
+      description: "Fast-paced storytelling, punchy hooks in the first 3 seconds, dynamic pacing, and pattern interrupts that boost watch time.",
+      icon: "zap"
+    },
+    {
+      title: "Color Grading & Correction",
+      description: "Film emulation, mood color science, skin-tone preservation, and cinematic LUT workflows in DaVinci Resolve.",
+      icon: "palette"
+    },
+    {
+      title: "Immersive Sound Design & SFX",
+      description: "Multi-layered sound effects, crisp Foley, vocal cleanup, Audacity audio mastery, and beat-matched audio rhythm.",
+      icon: "volume"
+    },
+    {
+      title: "Motion Graphics & Animation",
+      description: "Custom intros, outros, lower thirds, 3D camera tracks, kinetic typography, and After Effects visual accents.",
+      icon: "sparkles"
+    }
+  ],
+  tools: [
+    { name: "DaVinci Resolve", category: "Post-Production & Color", icon: "https://cdn.simpleicons.org/davinciresolve" },
+    { name: "Adobe Premiere Pro", category: "Primary Editing & Assembly", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg" },
+    { name: "After Effects", category: "Motion Graphics & SFX", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" },
+    { name: "Audacity", category: "Audio Cleanup & Mixing", icon: "https://cdn.simpleicons.org/audacity" },
+    { name: "Photoshop", category: "Thumbnails & Asset Design", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
+    { name: "Canva", category: "Fast Visual Collateral", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" }
+  ],
+  services: [
+    "Documentary Videos",
+    "YouTube Long-form Content",
+    "Instagram Reels & Shorts",
+    "Travel & Moto Vlogs",
+    "Tech & Explainer Videos",
+    "Corporate & Commercial Ads"
+  ],
+  creators: [
+    {
+      name: "@Bikebuddytales",
+      platform: "YouTube",
+      url: "https://www.youtube.com/@Bikebuddytales",
+      tag: "Moto & Travel Vlogs",
+      description: "Dynamic travel & moto vlogs featuring smooth speed ramps, atmospheric sound design, and color grading for scenic road journeys."
+    },
+    {
+      name: "@The3rdiii",
+      platform: "YouTube",
+      url: "https://www.youtube.com/@The3rdiii",
+      tag: "Documentary & Storytelling",
+      description: "Narrative-driven documentaries and explainer episodes with immersive pacing, research visual integration, and atmospheric soundscapes."
+    },
+    {
+      name: "@gopal_choudharynsui",
+      platform: "Instagram",
+      url: "https://www.instagram.com/gopal_choudharynsui",
+      tag: "Viral Reels & Events",
+      description: "High-energy reels, public outreach videos, and event highlights with bold typography and instant-hook editing."
+    }
+  ],
+  projects: [
+    {
+      id: "doc-project",
+      title: "Documentary Video Project",
+      badge: "Documentary",
+      gradient: "from-rose-500/20 to-purple-500/20",
+      description: "Deep-dive investigative and narrative documentary editing focused on viewer retention, archival footage assembly, and emotional story arcs.",
+      tags: ["DaVinci Resolve", "Storytelling", "Color Grading", "Sound Design"],
+      links: [
+        { label: "Link 1", url: "https://www.youtube.com/@The3rdiii" },
+        { label: "Link 2", url: "https://www.youtube.com/@Bikebuddytales" }
+      ]
+    },
+    {
+      id: "vlog-project",
+      title: "Vlog Video Project",
+      badge: "Travel & Vlogs",
+      gradient: "from-blue-500/20 to-cyan-500/20",
+      description: "Engaging creator vlogs built with seamless beat-matched music, smooth speed ramps, environmental sound effects, and vibrant color science.",
+      tags: ["Premiere Pro", "B-Roll Flow", "Speed Ramps", "Audio Sync"],
+      links: [
+        { label: "Link 1", url: "https://www.youtube.com/@Bikebuddytales" },
+        { label: "Link 2", url: "https://www.youtube.com" }
+      ]
+    },
+    {
+      id: "tech-project",
+      title: "Tech Video Project",
+      badge: "Tech & Explainers",
+      gradient: "from-emerald-500/20 to-teal-500/20",
+      description: "Punchy tech breakdowns and product explainers featuring custom screen recordings, callout graphics, and synchronized subtitle animations.",
+      tags: ["After Effects", "Motion Graphics", "Audacity", "Subtitles"],
+      links: [
+        { label: "Link 1", url: "https://www.youtube.com" }
+      ]
+    }
+  ],
+  contact: {
+    location: "Delhi, India",
+    phone: "+91 7703865824",
+    email: "niralanishant331@gmail.com",
+    whatsappUrl: "https://wa.me/917703865824?text=Hi%20Nishant,%20I%20saw%20your%20Video%20Editing%20portfolio!",
+    status: "Open to Remote, Freelance & Contract Opportunities"
+  }
+};

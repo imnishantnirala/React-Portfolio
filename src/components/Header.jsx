@@ -29,12 +29,12 @@ function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <nav className="hidden md:flex items-center space-x-0.5 lg:space-x-1.5 xl:space-x-2">
             {menuList.map((item, index) => (
               <a
                 key={index}
-                href={'#' + item}
-                className="px-3 lg:px-4 py-2 text-sm lg:text-base font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-colors duration-200"
+                href={'#' + item.replace(/\s+/g, '')}
+                className="px-2.5 lg:px-3.5 py-1.5 lg:py-2 text-xs lg:text-sm xl:text-base font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/5 whitespace-nowrap transition-colors duration-200"
               >
                 {item}
               </a>
@@ -42,7 +42,7 @@ function Header() {
           </nav>
 
           {/* Desktop CTA Button */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center shrink-0">
             <a href={link} target="_blank" rel="noopener noreferrer">
               <button className={buttonClasses}>
                 <span className={buttonSpanClasses}>
@@ -85,7 +85,7 @@ function Header() {
             {menuList.map((item, index) => (
               <a
                 key={index}
-                href={'#' + item}
+                href={'#' + item.replace(/\s+/g, '')}
                 onClick={handleLinkClick}
                 className="block px-4 py-3 rounded-xl text-base font-medium text-gray-200 hover:text-white hover:bg-purple-600/10 hover:border-l-4 hover:border-purple-500 transition-all duration-150"
               >
