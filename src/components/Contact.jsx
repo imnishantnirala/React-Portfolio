@@ -1,18 +1,42 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, LoaderCircle, CircleAlert } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { aboutData } from '../data/constants';
 
 function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const { email, phone, location, linkedin, github } = aboutData;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 4500);
+
+    const form = e.currentTarget;
+    setErrorMessage('');
+    setSubmissionStatus('sending');
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.message || `Email service returned ${response.status}.`);
+      }
+      if (result.success !== 'true' && result.success !== true) {
+        throw new Error(result.message || 'Email service could not accept the message.');
+      }
+
+      form.reset();
+      setSubmissionStatus('success');
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
+      setErrorMessage(`Your message could not be sent. Please try again or email me directly at ${email}.`);
+      setSubmissionStatus('error');
+    }
   };
 
   return (
@@ -110,18 +134,31 @@ function Contact() {
         {/* Contact Form (3 cols on lg) */}
         <div className="lg:col-span-3">
           <div className="bg-surface-100/80 dark:bg-surface-900/60 backdrop-blur-md border border-surface-200/80 dark:border-white/[0.08] rounded-2xl p-6 sm:p-8 shadow-sm dark:shadow-glass-dark">
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4" aria-busy={submissionStatus === 'sending'}>
+              <input type="hidden" name="_subject" value="New portfolio contact message" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="text" name="_honey" tabIndex="-1" autoComplete="off" className="hidden" />
               <h3 className="text-xl sm:text-2xl font-bold text-surface-950 dark:text-white mb-4">
                 Send a Message <span className="inline-block animate-bounce select-none">🚀</span>
               </h3>
 
-              {submitted && (
+              {submissionStatus === 'success' && (
                 <div
                   role="status"
                   className="p-3.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-sm font-medium flex items-center justify-center gap-2 animate-fade-in"
                 >
                   <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-500" />
-                  <span>✨ Thank you for reaching out! Your message has been received.</span>
+                  <span>✨ Your message has been submitted! I&apos;ll get back to you soon.</span>
+                </div>
+              )}
+
+              {submissionStatus === 'error' && (
+                <div
+                  role="alert"
+                  className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-700 dark:text-rose-300 text-sm font-medium flex items-center gap-2"
+                >
+                  <CircleAlert className="w-4 h-4 shrink-0 text-rose-500" />
+                  <span>{errorMessage}</span>
                 </div>
               )}
 
@@ -134,6 +171,7 @@ function Contact() {
                   id="name"
                   name="name"
                   required
+                  disabled={submissionStatus === 'sending'}
                   className="w-full px-4 py-3 bg-surface-50 dark:bg-surface-800/80 border border-surface-300 dark:border-white/[0.1] rounded-xl text-surface-950 dark:text-white placeholder-surface-400 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all min-h-[44px]"
                   placeholder="John Doe"
                 />
@@ -148,6 +186,7 @@ function Contact() {
                   id="email"
                   name="email"
                   required
+                  disabled={submissionStatus === 'sending'}
                   className="w-full px-4 py-3 bg-surface-50 dark:bg-surface-800/80 border border-surface-300 dark:border-white/[0.1] rounded-xl text-surface-950 dark:text-white placeholder-surface-400 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all min-h-[44px]"
                   placeholder="name@example.com"
                 />
@@ -162,6 +201,7 @@ function Contact() {
                   name="message"
                   rows="4"
                   required
+                  disabled={submissionStatus === 'sending'}
                   className="w-full px-4 py-3 bg-surface-50 dark:bg-surface-800/80 border border-surface-300 dark:border-white/[0.1] rounded-xl text-surface-950 dark:text-white placeholder-surface-400 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-y"
                   placeholder="Write your project details, hiring inquiry, or question..."
                 />
@@ -169,10 +209,13 @@ function Contact() {
 
               <button
                 type="submit"
-                className="w-full py-3.5 px-6 rounded-xl font-semibold text-white bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 shadow-md shadow-primary-600/25 hover:shadow-primary-600/35 transition-all duration-200 transform hover:scale-[1.01] active:scale-[0.99] text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer min-h-[48px] focus-visible:ring-2 focus-visible:ring-primary-500"
+                disabled={submissionStatus === 'sending'}
+                className="w-full py-3.5 px-6 rounded-xl font-semibold text-white bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 shadow-md shadow-primary-600/25 hover:shadow-primary-600/35 transition-all duration-200 transform hover:scale-[1.01] active:scale-[0.99] text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer min-h-[48px] focus-visible:ring-2 focus-visible:ring-primary-500 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
               >
-                <span>Send Message</span>
-                <Send className="w-4 h-4" />
+                <span>{submissionStatus === 'sending' ? 'Sending...' : 'Send Message'}</span>
+                {submissionStatus === 'sending'
+                  ? <LoaderCircle className="w-4 h-4 animate-spin" />
+                  : <Send className="w-4 h-4" />}
               </button>
             </form>
           </div>
