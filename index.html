@@ -1,13 +1,39 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/profile-logo.png" />
+    <link rel="icon" type="image/png" href="/src/assets/profile-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nishant Nirala</title>
+    <meta name="description" content="Nishant Nirala - Full Stack Software Engineer & Creative Video Editor. 3.5+ years building scalable REST APIs, modern web apps, and high-retention media." />
+    <meta name="theme-color" content="#090a0f" />
+    <title>Nishant Nirala | Full Stack Engineer & Video Editor</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme Initialization Script (Avoids Flash of Wrong Theme) -->
+    <script>
+      (function() {
+        try {
+          const storedTheme = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (storedTheme === 'dark' || (!storedTheme && prefersDark) || !storedTheme) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
   </head>
-  <body>
+  <body class="bg-surface-50 text-slate-800 dark:bg-surface-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+

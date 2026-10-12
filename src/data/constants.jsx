@@ -435,8 +435,7 @@ export const videoEditingData = {
       description: "Deep-dive investigative and narrative documentary editing focused on viewer retention, archival footage assembly, and emotional story arcs.",
       tags: ["DaVinci Resolve", "Storytelling", "Color Grading", "Sound Design"],
       links: [
-        { label: "Link 1", url: "https://www.youtube.com/@The3rdiii" },
-        { label: "Link 2", url: "https://www.youtube.com/@Bikebuddytales" }
+        { label: "Link 1", url: "https://www.youtube.com/@The3rdiii" }
       ]
     },
     {

@@ -1,4 +1,5 @@
-import React from 'react';
+import { ExternalLink, MapPin, Sparkles, ArrowRight } from 'lucide-react';
+import { GithubIcon } from './Icons';
 import { aboutData } from '../data/constants';
 
 function About() {
@@ -6,109 +7,167 @@ function About() {
     aboutText,
     title,
     profile,
+    secondaryProfile,
     buttonText,
-    buttonClasses,
     resumeLink,
     profileImage,
     location,
     experienceYears,
-    github,
-    linkedin
+    github
   } = aboutData;
 
   return (
-    <section className="relative pt-24 sm:pt-28 md:pt-36 pb-12 sm:pb-16 md:pb-20 overflow-hidden" id="About">
-      {/* Subtle ambient background glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 md:w-[500px] h-72 sm:h-96 md:h-[500px] bg-gradient-to-tr from-purple-600/20 to-[#c5a375]/20 rounded-full blur-3xl pointer-events-none -z-10" />
+    <section
+      id="About"
+      className="relative pt-28 sm:pt-32 md:pt-40 lg:pt-44 pb-16 sm:pb-20 md:pb-28 overflow-hidden"
+      aria-label="Introduction and Hero"
+    >
+      {/* Ambient Radial Backdrops (Linear / Stripe aesthetic) */}
+      <div
+        className="absolute top-12 left-1/2 -translate-x-1/2 -translate-y-12 w-[340px] sm:w-[600px] lg:w-[800px] h-[340px] sm:h-[500px] bg-gradient-to-tr from-primary-600/15 via-accent-500/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1/3 -right-24 w-80 h-80 bg-accent-500/10 rounded-full blur-3xl pointer-events-none -z-10"
+        aria-hidden="true"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-12 lg:gap-16">
-          {/* Text Content */}
-          <div className="w-full md:w-7/12 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-4 rounded-full bg-purple-950/60 border border-purple-800/40 text-purple-300 text-xs sm:text-sm font-medium tracking-wide">
-              <span>👋</span>
-              <span>Full Stack &amp; Backend Engineer</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          
+          {/* Main Hero Information (7 cols on large desktop) */}
+          <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
+            
+            {/* Live Status Pill */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 mb-6 rounded-full bg-surface-200/80 dark:bg-white/[0.05] border border-surface-300/80 dark:border-white/[0.08] shadow-sm backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span className="text-xs font-semibold text-surface-800 dark:text-surface-200 tracking-wide">
+                Available for Remote / Full-time
+              </span>
               {experienceYears && (
-                <span className="ml-1 px-2 py-0.2 rounded-full bg-purple-800/60 text-[11px] text-purple-200">
+                <span className="font-mono text-[11px] font-bold px-2 py-0.5 rounded-full bg-primary-600/15 text-primary-700 dark:bg-primary-500/20 dark:text-primary-300">
                   {experienceYears} Exp
                 </span>
               )}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            {/* Main Single H1 */}
+            <h1 className="text-fluid-h1 font-extrabold text-surface-950 dark:text-white tracking-tight leading-[1.1]">
               {title}
             </h1>
 
-            <h2 className="mt-3 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+            {/* Profile H2 & Tagline */}
+            <h2 className="mt-3 text-lg sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500 dark:from-primary-400 dark:via-accent-300 dark:to-accent-400 bg-clip-text text-transparent">
               {profile}
             </h2>
 
-            {location && (
-              <p className="mt-2 text-xs sm:text-sm text-gray-400 flex items-center justify-center md:justify-start gap-1.5">
-                <span>📍</span>
-                <span>{location}</span>
-                <span className="text-gray-600">•</span>
-                <span className="text-emerald-400">Available for Remote / Full-time</span>
-              </p>
-            )}
+            {/* Secondary Profile & Location Meta */}
+            <div className="mt-2.5 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm text-surface-600 dark:text-surface-400">
+              {secondaryProfile && (
+                <span className="font-medium text-surface-700 dark:text-surface-300">
+                  {secondaryProfile}
+                </span>
+              )}
+              {location && (
+                <>
+                  <span className="hidden sm:inline text-surface-300 dark:text-surface-700">•</span>
+                  <span className="inline-flex items-center gap-1 font-medium text-surface-500 dark:text-surface-400">
+                    <MapPin className="w-3.5 h-3.5 text-accent-500" />
+                    {location}
+                  </span>
+                </>
+              )}
+            </div>
 
-            <p className="mt-5 text-sm sm:text-base md:text-lg text-gray-300/90 leading-relaxed max-w-2xl mx-auto md:mx-0">
+            {/* Bio Paragraph with 60-75ch line length for maximum readability */}
+            <p className="mt-6 text-sm sm:text-base lg:text-lg text-surface-700 dark:text-surface-300 leading-relaxed readable-measure text-center lg:text-left">
               {aboutText}
             </p>
 
-            {/* Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-4">
-              <a href={resumeLink} target="_blank" rel="noopener noreferrer">
-                <button type="button" className={buttonClasses}>
-                  <span className="flex items-center gap-2">
-                    {buttonText}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </span>
-                </button>
+            {/* Primary Action Buttons (Fitts's Law large touch targets) */}
+            <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3.5 w-full sm:w-auto">
+              {/* Check Resume CTA */}
+              <a
+                href={resumeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-white bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 shadow-lg shadow-primary-600/25 hover:shadow-primary-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 min-h-[48px] focus-visible:ring-2 focus-visible:ring-primary-500"
+              >
+                <span>{buttonText}</span>
+                <ExternalLink className="w-4 h-4 opacity-90" />
               </a>
 
+              {/* GitHub Button */}
               {github && (
                 <a
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-3 rounded-xl text-sm sm:text-base font-medium text-gray-200 bg-gray-900/80 hover:bg-gray-800 border border-gray-700/80 hover:border-gray-600 transition-all duration-200 hover:text-white flex items-center gap-2"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-surface-800 dark:text-surface-200 bg-surface-200/80 dark:bg-white/[0.06] hover:bg-surface-300/80 dark:hover:bg-white/[0.12] border border-surface-300 dark:border-white/[0.08] hover:border-surface-400 dark:hover:border-white/[0.18] transition-all duration-200 min-h-[48px] focus-visible:ring-2 focus-visible:ring-primary-500"
                 >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                  </svg>
+                  <GithubIcon className="w-4 h-4" />
                   <span>GitHub</span>
                 </a>
               )}
 
-              <a href="#Contact">
-                <button
-                  type="button"
-                  className="px-5 py-3 rounded-xl text-sm sm:text-base font-medium text-gray-300 hover:text-white bg-gray-900/60 hover:bg-gray-800/80 border border-gray-800 hover:border-gray-700 transition-all duration-200"
-                >
-                  Contact Me
-                </button>
+              {/* Contact Me Anchor */}
+              <a
+                href="#Contact"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm sm:text-base text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 dark:hover:bg-primary-900/40 border border-primary-200 dark:border-primary-800/40 transition-all duration-200 min-h-[48px] focus-visible:ring-2 focus-visible:ring-primary-500"
+              >
+                <span>Contact Me</span>
+                <ArrowRight className="w-4 h-4" />
               </a>
             </div>
+
           </div>
 
-          {/* Profile Image with modern glowing frame */}
-          <div className="w-full md:w-5/12 flex justify-center">
+          {/* Profile Visual (5 cols on large desktop) */}
+          <div className="lg:col-span-5 flex justify-center order-first lg:order-last">
             <div className="relative group">
-              {/* Outer Glow */}
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-purple-600 to-[#c5a375] rounded-full blur-xl opacity-60 group-hover:opacity-90 transition duration-500" />
+              {/* Multilayered ambient backlight aura */}
+              <div
+                className="absolute -inset-2 sm:-inset-4 bg-gradient-to-tr from-primary-600/30 via-accent-500/20 to-primary-400/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-500"
+                aria-hidden="true"
+              />
 
-              <div className="relative w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-gray-800/80 shadow-2xl bg-gray-900">
-                <img
-                  src={profileImage}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  alt="Nishant Nirala"
-                />
+              {/* Profile Card Container */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl p-2 bg-gradient-to-b from-white/80 via-white/40 to-white/10 dark:from-white/10 dark:via-white/[0.05] dark:to-transparent border border-surface-300/70 dark:border-white/[0.1] shadow-2xl backdrop-blur-xl">
+                <div className="w-full h-full rounded-2xl overflow-hidden bg-surface-900 relative">
+                  <img
+                    src={profileImage}
+                    alt="Nishant Nirala"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    loading="eager"
+                    width="384"
+                    height="384"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-950/60 via-transparent to-transparent pointer-events-none" />
+                </div>
+
+                {/* Floating Experience Badge */}
+                {experienceYears && (
+                  <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 px-4 py-2 rounded-2xl bg-surface-50/95 dark:bg-surface-900/95 border border-surface-200 dark:border-white/[0.1] shadow-xl backdrop-blur-md flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-lg bg-primary-600/15 dark:bg-primary-500/20 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                      <Sparkles className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="font-mono text-xs font-bold text-surface-950 dark:text-white leading-tight">
+                        {experienceYears}
+                      </div>
+                      <div className="text-[10px] text-surface-500 dark:text-surface-400 font-medium leading-none">
+                        Engineering Exp
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
